@@ -7,7 +7,7 @@ class Usuario {
     private $foto;
     private $linkedIn;
     private $senha;
-    private $administrador;
+    private $admin;
 
 
 public function getId(){
@@ -50,11 +50,11 @@ public function setFoto($valor){
 }
 
 
-public function getAdministrador(){
-    return $this->administrador;
+public function getAdmin(){
+    return $this->admin;
 }
-public function setAdministrador($valor){
-    $this->administrador=$valor;
+public function setAdmin($valor){
+    $this->admin=$valor;
 }
 
 
