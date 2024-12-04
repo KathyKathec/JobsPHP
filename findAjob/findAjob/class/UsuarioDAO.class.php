@@ -13,15 +13,15 @@ class UsuarioDAO{
     public function inserir(Usuario $usuario){
 
         $sql= $this-> conexao-> prepare(
-            "INSERT INTO usuario (nome, email, senha, foto, linkedIn, administrador)
-            VALUES (:nome, :email, :senha, :foto, :linkedIn, :administrador)"
+            "INSERT INTO usuario (nome, email, senha, foto, linkedIn, admin)
+            VALUES (:nome, :email, :senha, :foto, :linkedIn, :admin)"
         );
         $sql->bindValue(":nome", $usuario->getNome());
         $sql->bindValue(":email", $usuario->getEmail());
         $sql->bindValue(":senha", $usuario->getSenha());
         $sql->bindValue(":foto", $usuario->getFoto());
         $sql->bindValue(":linkedIn", $usuario->getLinkedIn());
-        $sql->bindValue(":administrador", $usuario->getAdministrador());
+        $sql->bindValue(":admin", $usuario->getAdmin());
 
         return $sql->execute();
     }
